@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Library</title>
+  </head>
+  <body>
+    {% include "library/navbaradmin.html" %}
+    <br />
+    <br />
+    <div class="container">
+      <br /><br />
+
+      <div class="alert alert-info" role="alert">
+        Book Issued Successfully !
+      </div>
+
+      <br /><br />
+      <br /><br />
+      <br /><br />
+      <div class="options" style="text-align: center">
+        <a
+          href="issuebook"
+          class="btn btn-primary btn-lg"
+          role="button"
+          aria-pressed="true"
+          >Issue more Book</a
+        ><br /><br />
+
+        <a
+          href="viewissuedbook"
+          class="btn btn-primary btn-lg"
+          role="button"
+          aria-pressed="true"
+          >View Issued Book</a
+        ><br /><br />
+      </div>
+      <br />
+    </div>
+    <br /><br />
+    <br /><br />
+    <br /><br />
+    {% include "library/footer.html" %}
+  </body>
+</html>

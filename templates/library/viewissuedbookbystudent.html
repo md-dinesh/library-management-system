@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Library</title>
+  </head>
+  <body>
+    {% include "library/navbarstudent.html" %}<br /><br />
+    <br /><br /><br /><br />
+    <div class="container">
+      <br />
+      <h1>Books Issued</h1>
+      <div class="row">
+        <div class="col-sm-6">
+          {% if li1%}
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Enrollment</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Book Author</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for t in li1 %}
+              <tr>
+                <td>{{t.0}}</td>
+                <td>{{t.1}}</td>
+                <td>{{t.2}}</td>
+                <td>{{t.3}}</td>
+                <td>{{t.4}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-sm-5">
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Issue Date</th>
+                <th scope="col">Expiry Date</th>
+                <th scope="col">Fine</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for t in li2 %}
+              <tr>
+                <td>{{t.0}}</td>
+                <td>{{t.1}}</td>
+                <td>{{t.2}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {%else%}
+          <h1>No book Issued to you</h1>
+          {%endif%}
+        </div>
+      </div>
+    </div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br />
+    {% include "library/footer.html" %}
+  </body>
+</html>

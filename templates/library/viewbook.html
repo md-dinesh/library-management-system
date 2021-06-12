@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+<title>Library</title>
+  </head>
+  <body>
+    {% include "library/navbaradmin.html" %}
+    <br /><br />
+    <br /><br /><br /><br />
+
+<div class="container">
+      <br />
+      <h1>Books Available</h1>
+      <div class="row">
+        <div class="col-sm-6">
+    {% if books %}
+
+
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Book Name</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Author</th>
+                <th scope="col">Category</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for book in books %}
+              <tr>
+                <td>{{book.name}}</td>
+                <td>{{book.isbn}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.category}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+</div>
+</div>
+</div>
+
+
+    {% else %}
+    <h1>Have 0 book</h1>
+
+
+    {% endif %}
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    {% include "library/footer.html" %}
+  </body>
+</html>

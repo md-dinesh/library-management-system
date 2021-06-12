@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Library</title>
+  </head>
+  <body>
+    {% include "library/navbaradmin.html" %}
+
+    <br /><br /><br /><br />
+    <div class="container">
+      <br />
+      <h1>Students</h1>
+      <div class="row">
+        <div class="col-sm-8">
+          {% if students %}
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Enrollment</th>
+                <th scope="col">Branch</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for s in students %}
+              <tr>
+                <td>{{s.get_name}}</td>
+                <td>{{s.enrollment}}</td>
+                <td>{{s.branch}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+          {% else %}
+          <h1>No Student Registered in Library</h1>
+          {% endif %}
+
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br />
+        </div>
+      </div>
+    </div>
+    {% include "library/footer.html" %}
+  </body>
+</html>
